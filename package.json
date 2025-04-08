@@ -1,7 +1,7 @@
 {
-  "name": "lehtdrop-contract",
+  "name": "contract",
   "version": "0.1.0",
-  "description": "lehtdrop contract bsc for bulksender",
+  "description": "contract bsc",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -9,13 +9,14 @@
   "author": "kmilo.denis.glez@yandex.com",
   "license": "",
   "devDependencies": {
-    "@nomicfoundation/hardhat-network-helpers": "^1.0.8",
-    "@nomicfoundation/hardhat-toolbox": "^2.0.2",
-    "@nomiclabs/hardhat-ethers": "^2.2.3",
-    "@nomiclabs/hardhat-etherscan": "^3.1.7",
-    "bignumber.js": "^9.1.1",
-    "chai": "^4.3.7",
-    "hardhat": "^2.14.0",
-    "mocha": "^10.2.0"
+    "@nomicfoundation/hardhat-ethers": "3.0.8",
+    "@nomicfoundation/hardhat-network-helpers": "1.0.12",
+    "@nomicfoundation/hardhat-toolbox": "5.0.0",
+    "@nomicfoundation/hardhat-verify": "^2.0.13",
+    "bignumber.js": "9.2.0",
+    "chai": "4.3.0",
+    "ethers": "6.13.5",
+    "hardhat": "2.22.19",
+    "mocha": "11.1.0"
   }
 }
