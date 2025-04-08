@@ -2,8 +2,8 @@ require("@nomicfoundation/hardhat-toolbox");
 
 const { mnemonic, bscscanApiKey } = require('./secrets.json');
 
-require('@nomiclabs/hardhat-ethers');
-require("@nomiclabs/hardhat-etherscan");
+require('@nomicfoundation/hardhat-ethers');
+require("@nomicfoundation/hardhat-verify");
 
 // This is a sample Hardhat task. To learn how to create your own go to
 // https://hardhat.org/guides/create-task.html
@@ -45,7 +45,31 @@ module.exports = {
   etherscan: {
     // Your API key for Etherscan
     // Obtain one at https://bscscan.com/
-    apiKey: bscscanApiKey 
+    apiKey: {
+      bscTestnet: "bscscanApiKey", // API Key para Testnet
+      bsc: "TU_API_KEY_BSCSCAN" // API Key para Mainnet
+    },
+    customChains: [
+      {
+        network: "bscTestnet",
+        chainId: 97,
+        urls: {
+          apiURL: "https://api-testnet.bscscan.com/api",
+          browserURL: "https://testnet.bscscan.com"
+        }
+      },
+      {
+        network: "bsc",
+        chainId: 56,
+        urls: {
+          apiURL: "https://api.bscscan.com/api",
+          browserURL: "https://bscscan.com"
+        }
+      }
+    ]
+  },
+  sourcify: {
+    enabled: false
   },
   solidity: {
   version: "0.8.9",
