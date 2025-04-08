@@ -4,9 +4,12 @@
 
 This readme is only to operate on testnets (localnet or testnet)
 
+Create secrets.json file
 ```bash
-cd contract
+cp secrets.orig.json secrets.json
 ```
+And then add your mnemonic or privateKey
+
 Start an HTTP and WebSocket JSON-RPC server at http://127.0.0.1:8545/:
 ```bash
 npx hardhat node
@@ -14,7 +17,7 @@ npx hardhat node
 
 This will start Hardhat Network, and expose it as a JSON-RPC and WebSocket server.
 
-Then, just connect your wallet or application to http://127.0.0.1:8545.
+Then, just connect your wallet or application to http://127.0.0.1:8545. see more in [Como conectar MetaMask](./README.METAMASK.MD)
 
 ## Compile your contract
 Run the following command to compile the contract:
@@ -22,11 +25,13 @@ Run the following command to compile the contract:
 npx hardhat compile
 ```
 
-## Deploy lehtdrop contract to localnet
+## Deploy KDGToken contract to localnet
 If you want to connect to `local node`, open other terminal and run `npx hardhat run` command using `--network localhost`.
 ```bash
 npx hardhat run --network localhost scripts/deploy.js
 ```
+
+> Note: The above command we deploy the contract on the local hardhat node
 
 The terminal should show output similar to this:
 
@@ -36,21 +41,7 @@ Account balance: 10000000000000000000000
 Token Successfully Deployed!
 Token address: 0x5FbDB2315678afecb367f032d93F642f64180aa3
 ```
-
-## To deploy KDG token (bep20) contract to `localnet`
-```bash
-npx hardhat run --network localhost scripts/deploy.js
-```
-> Note: The above command we deploy the contract on the local hardhat node
-
-The terminal should show output similar to this:
-
-```bach
-Deploying contracts with the account: 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
-Account balance: 9999999308554875000000
-Token Successfully Deployed!
-Token address: 0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512
-```
+¡Listo! Tu contrato debería desplegarse correctamente. 🚀
 
 ## To deploy KDG token (bep20) contract to testnet
 To connect to `testnet` the steps are similar to those shown above, with 1 exceptions. Need to replace `--network localhost` by `--network testnet`.
@@ -76,6 +67,8 @@ npx hardhat  verify --network testnet 0xB8924401eBD62b265b8277a7a6D6775b6DcF17FB
 ```
 
 > NOTE: If you deploy in testnet you can check the deployment status here: <https://testnet.bscscan.com/>
+
+> OTHER WAYS: https://hardhat.org/hardhat-runner/docs/guides/deploying
 
 ## testing contracts
 To run the tests using the local hardhat node, run the following statement:
